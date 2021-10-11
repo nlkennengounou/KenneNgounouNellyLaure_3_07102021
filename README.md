@@ -1,4 +1,4 @@
-# nlkennengounou.KenneNgounouNellyLaure_3_07102021.github.io
+# Ohmyfood
 Troisième projet du parcours "Développeur web" chez OpenClassroom. 
 L'objectif d'intégrer puis de dynamiser une page web avec des animations CSS en utilisant le préprocesseur Sass
 
@@ -70,7 +70,7 @@ des points de suspension. Un exemple de l’effet attendu est fourni.
 - Logo & titres: Shrikhand
 - Texte: Roboto
 
-** Code Couleurs :**
+**Code Couleurs :**
 - Primaire: #9356DC
 - Secondaire: #FF79DA
 - Tertiaire: #99E2D0
