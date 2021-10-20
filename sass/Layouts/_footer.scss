@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+.footer {
+    background-color: #353535;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .container {
+      display: flex;
+      flex-direction: column;
+      padding: $normal-padding;
+    }
+    
+    &__logo {
+      color: white;
+      font-family: "Shrikhand", "cursive";
+      margin: 0;
+      font-size: 1.2rem;
+      margin-bottom: $normal-padding;
+    }
+
+    &__link {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+        color: white;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+
+    }
+
+    &__icon {
+      width: 1.2rem;
+      margin-right: 0.5rem;
+    }
+
+    &__text{
+      font-weight: bold;
+    }
+
+    @media (max-width:1280px) {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+  }

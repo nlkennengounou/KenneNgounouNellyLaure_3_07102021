@@ -1,0 +1,19 @@
+{
+  "name": "nlkennengounou.kennengounounellylaure_3_07102021.github.io",
+  "version": "1.0.0",
+  "description": "Troisième projet du parcours \"Développeur web\" chez OpenClassroom. \r L'objectif d'intégrer puis de dynamiser une page web avec des animations CSS en utilisant le préprocesseur Sass",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nlkennengounou/nlkennengounou.KenneNgounouNellyLaure_3_07102021.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nlkennengounou/nlkennengounou.KenneNgounouNellyLaure_3_07102021.github.io/issues"
+  },
+  "homepage": "https://github.com/nlkennengounou/nlkennengounou.KenneNgounouNellyLaure_3_07102021.github.io#readme"
+}
