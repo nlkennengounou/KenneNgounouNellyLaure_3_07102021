@@ -87,9 +87,9 @@ des points de suspension. Un exemple de l’effet attendu est fourni.
 ## Tester le projet
 
 Pour tester simplement & rapidement, 
-- veuillez cliquer sur le lien suivant : https://github.com/nlkennengounou/nlkennengounou.KenneNgounouNellyLaure_3_07102021.github.io.git
+- veuillez cliquer sur le lien suivant : https://nlkennengounou.github.io/KenneNgounouNellyLaure_3_07102021/
 
 - ou clonez le projet depuis un terminal
 ```terminal
-git clone https://github.com/nlkennengounou/nlkennengounou.KenneNgounouNellyLaure_3_07102021.github.io.git
+git clone https://github.com/nlkennengounou/KenneNgounouNellyLaure_3_07102021.git
 ```

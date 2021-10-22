@@ -228,6 +228,7 @@
     align-items: center;
     width: 100%;
     height: 100%;
+    padding-top: 50px;
    
     background-color: $couleur-bg; 
     @media (max-width:830px) {
@@ -239,141 +240,142 @@
     }
 }
 
+
 .carte{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-content: space-around;
-    align-items: flex-start;
-    width: 40%;
+
+    margin-bottom: 40px;
+
     background-color: white;
     border-radius: 20px;
-    margin-bottom: 40px;
     text-decoration: none;
+    color: inherit;
+
     position: relative;
+
+    width:40%;
+
+    &__image{
+        object-fit: cover;        
+        height: 200px;
+        width: 100%;
+        border-radius: 20px 20px 0px 0px;
+        border: transparent solid 0px;
+    }
 
     &__badge{
         background-color: $couleur-tertiaire;
-        color: darken($couleur-tertiaire, 50%);
-        padding: 0.5rem;
-        border:none;
-        border-radius: 0.125rem;
+        color: darken($couleur-tertiaire, 90%);
+        
+        border-radius: 5px;
+        padding: 5px;
+
         position: absolute;
         top: 10px;
-        right: 10px;  
-    }
-
-    &__image{
-        object-fit: cover;
-        width: 100%;
-        border: transparent solid 0px;
-        height: 200px;
-        border-radius: 20px 20px 0px 0px;
+        right: 10px;
     }
 
     &__description{
-        padding: 20px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        
+        display:flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+
+        border-radius:  0px 0px 20px 20px;
+        padding:  0px 20px 20px 20px;
     }
 
     &__titres{
-        flex: 1;
+       
     }
 
     &__titre1{
-        margin: 0;
-        margin-bottom: 0.25rem;
-    }
 
+    }
+    
     &__titre2{
-        margin: 0;
-    }
 
-    &__icon {
-        height: 2rem;
-        width: 2rem;
+    }
+    
+    &__icon{
+
+        display:flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items:flex-start;
+        justify-content:center;
+
         background-color: transparent;
         border: transparent 0px solid;
-        padding: 0;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        cursor: pointer;
+        
+        padding-top: 20px;
+
+
+        width: 50px;
+        height: 50px;
+
         position: relative;
-        background-color: black;
-        
+        cursor: pointer;
+
+
         &:hover::before {
-          opacity: 1;
+            opacity: 1;
         }
-        
-        &::before {
-          opacity: 0;
-          transition: 0.5s;
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 100%;
-          background:linear-gradient(0deg, $couleur-primaire 0%,$couleur-secondaire 100%);
+          
+        &::before{
+            opacity: 0;
+            content: "";
+            transition: 0.5s;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            height: 100%;
+            width: 100%;
+            background:linear-gradient(0deg, $couleur-secondaire 0%, $couleur-primaire 100%);
         }
-        
+
+
+
+        &--regular{
+            height: 50px;
+            width: 50px;
+            &::before{
+                opacity: 1;
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding-top:20px;
+                padding-left: 10px;
+            }
+        }
+
+        &--solid{
+            height: 50px;
+            width: 50px;
+
+            &::before{
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding-top:20px;
+                padding-left: 10px;
+            }
+        }
     }
 
     &__icon:hover {
-        &--noBg {
+        &--regular {
           opacity: 0;
         }
     }
 
     @media (max-width:830px) {
-       width:90%;
-    }
-    
-}    
-     /* &__like {
-        transition-duration: .25s;
-        background-color: #f6f6f6;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        mix-blend-mode: lighten;
-      }
-    
-
-    
-
-    &__icon{
-
-
-        height: 2rem;
-        width: 2rem;
-        background-color: transparent;
-        border: transparent 0px solid;
-        padding: 0;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-
-        &::after{
-            color:red;
-        }
-
-        &--regular{
-
-        }
-
-        &--solid{
-            
-        }
-    }
-
-}*/
+        width:90%;
+     }
+     
+}
