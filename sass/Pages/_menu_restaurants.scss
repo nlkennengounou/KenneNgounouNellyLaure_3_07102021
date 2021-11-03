@@ -41,8 +41,7 @@
       justify-content:center;
       cursor: pointer;
       position: relative;
-      background-color: black;
-      
+      /*
       &:hover::before {
         opacity: 1;
       }
@@ -56,8 +55,8 @@
         left: 0;
         height: 100%;
         width: 100%;
-        background:linear-gradient(0deg, $couleur-primaire 0%,$couleur-secondaire 100%);
-      }
+        background: linear-gradient(0deg, $couleur-primaire 0%, $couleur-secondaire 100%);
+      }*/
     }
   
     &__like {
@@ -71,16 +70,25 @@
         left: 0;
         height: 100%;
         width: 100%;
-        mix-blend-mode: lighten;
-    }
-  
-    &__btn:hover {
-      .menu__like {
-        &--noBg {
+
+        &--solid {
+          background: linear-gradient(0deg, rgb(147, 86, 220), rgb(255, 121, 218));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
           opacity: 0;
+          &:hover{
+            opacity: 1;
+          }
         }
-      }
+
+        &--regular {
+          opacity: 1;
+          &:hover{
+            opacity: 0;
+          }
+        }
     }
+
 }
 
 .unMenuComplet{

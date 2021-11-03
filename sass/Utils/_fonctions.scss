@@ -1,0 +1,11 @@
+$end: 10;
+$tart: 2;
+
+@function automaticDelayLoader($start, $end) {
+    @for $i from $start to $end {
+        /*
+        .delay-#{$i} {
+            animation-delay: #{($i/10) - (0.1)};
+        }*/
+    }
+}
