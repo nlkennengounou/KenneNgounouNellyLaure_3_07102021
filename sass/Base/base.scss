@@ -1,15 +1,24 @@
+/* Le repertoire base/ contient les fichiers qui définissent les fondations de votre site, 
+par exemple la police de caractères et les normes que vous voulez appliquer sur tout votre site,
+telles que le box-sizing*/
+
+/* import de la police Roboto */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,900&display=swap');
 
+/* import de la police Shrikhand */
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
+/* Appliquons la police à toute la page et */
 body, html {
     margin: 0;
     font-family: Roboto, sans-serif;
     box-sizing: border-box;
-    min-width: 310px;
+    min-width: 250px;
 }
 
+/* Définition la taille maximale et les marges automatiques */
 .conteneur {
-    min-width: 300px;
+    min-width: 250px;
     max-width: 1280px;
     margin: auto;
     position: relative;

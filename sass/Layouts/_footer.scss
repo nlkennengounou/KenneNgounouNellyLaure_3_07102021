@@ -1,49 +1,66 @@
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+/*Le repertoire layouts/ est le dossier où vous mettez vos blocs BEM qui contiennent ce qui est réutilisable,
+ par exemple un header pour les mises en page de grande taille ou un footer ;*/
+
+ /*Notre footer est contitué de : 
+  - quatre liens
+  - les deux premiers sont précédés d'un logo 
+
+Quelques précisions:
+  - Le footer est identique sur toutes les pages.
+  - Au clic sur “Contact”, un renvoi vers une adresse mail est effectué.
+
+Style:
+  - backgound: gris foncé 
+  - police couleur blanche 
+  - backgound des logo blanc*/
+
+.conteneur {
+  display: flex;
+  flex-direction: column;
+  padding: $normal-padding;
+}
 
 .footer {
-    background-color: #353535;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    .container {
+  background-color: #353535;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  min-width: 250px;
+
+  &__logo {
+    color: white;
+    font-family: "Shrikhand", "cursive";
+    margin: 0;
+    font-size: 1.2rem;
+    margin-bottom: $normal-padding;
+  }
+
+  &__link {
       display: flex;
-      flex-direction: column;
-      padding: $normal-padding;
-    }
-    
-    &__logo {
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: nowrap;
       color: white;
-      font-family: "Shrikhand", "cursive";
-      margin: 0;
-      font-size: 1.2rem;
-      margin-bottom: $normal-padding;
-    }
-
-    &__link {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        flex-wrap: nowrap;
-        color: white;
-        text-decoration: none;
-        &:hover {
-          text-decoration: underline;
-        }
-
-    }
-
-    &__icon {
-      width: 1.2rem;
-      margin-right: 0.5rem;
-    }
-
-    &__text{
-      font-weight: bold;
-    }
-
-    @media (max-width:1280px) {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
+      text-decoration: none;
+      /*au survol: les liens sont surlignés */
+      &:hover { 
+        text-decoration: underline;
+      }
 
   }
+
+  &__icon {
+    width: 1.2rem;
+    margin-right: 0.5rem;
+  }
+
+  &__text {
+    font-weight: bold;
+  }
+
+  @media (max-width: 1280px) {
+      padding-left: 5%;
+      padding-right: 5%;
+  }
+
+}

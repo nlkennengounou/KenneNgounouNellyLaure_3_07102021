@@ -1,142 +1,132 @@
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+/* Style des Pages Menu des 4 restaurants */
 
+/* mettre une image comme couverture de la page */
 .imageBarnière {
-    max-width: 100%;
-    max-height: 32rem;
-    width: 100%;
-    object-fit: cover;
+  max-width: 100%;
+  min-width: 280px;
+  max-height: 32rem;
+  width: 100%;
+  object-fit: cover;
 }
 
+/* */
 .unecarte {
-    margin-top: -6rem;
-    border-radius: 2rem 2rem 0 0;
-    background-color: #f6f6f6;
-    z-index: 1;
-    width: 100%;
+  margin-top: -6rem;
+  border-radius: 2rem 2rem 0 0;
+  background-color: #f6f6f6;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  &__header {
+    padding: 1rem 2rem 0 1rem;
+    width: 95%;
     display: flex;
     align-items: center;
-    flex-direction: column;
     justify-content: space-between;
-    
-    &__header {
-      padding: 1rem 2rem 0 1rem;
-      width: 95%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+  }
+
+  &__title {
+    font-family: Shrikhand, "cursive";
+  }
+
+  &__btn {
+    height: 2rem;
+    width: 2rem;
+    background-color: transparent;
+    border: transparent 0px solid;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+  }
   
-    &__title {
-      font-family: "Shrikhand", "cursive";
-    }
-  
-    &__btn {
-      height: 2rem;
-      width: 2rem;
-      background-color: transparent;
-      border: transparent 0px solid;
-      padding: 0;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      cursor: pointer;
-      position: relative;
-      /*
-      &:hover::before {
+  /* animer les coeurs en remplissant avec un gradient qui apparait au survol */
+  &__like {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition-duration: 0.25s;
+    background-color: #f6f6f6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    /* coeur avec background */
+    &--solid {
+      background: -webkit-linear-gradient(0deg, rgb(147, 86, 220), rgb(255, 121, 218));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      opacity: 0;
+      &:hover{
         opacity: 1;
       }
-      
-      &::before {
+    }
+
+    /* coeur sans background */
+    &--regular {
+      opacity: 1;
+      &:hover{
         opacity: 0;
-        transition: 0.5s;
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background: linear-gradient(0deg, $couleur-primaire 0%, $couleur-secondaire 100%);
-      }*/
-    }
-  
-    &__like {
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        transition-duration: .25s;
-        background-color: #f6f6f6;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-
-        &--solid {
-          background: linear-gradient(0deg, rgb(147, 86, 220), rgb(255, 121, 218));
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          opacity: 0;
-          &:hover{
-            opacity: 1;
-          }
-        }
-
-        &--regular {
-          opacity: 1;
-          &:hover{
-            opacity: 0;
-          }
-        }
-    }
-
-}
-
-.unMenuComplet{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-
-    width:100%;
-    
-    @media (max-width: 900px) {
-        flex-direction: column;
-        width: 100%;
-    }
-
-}
-
-.unMenuPartie{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width:30%;
-    
-    &__titre{
-        text-transform: uppercase;
-        text-align: center;
-    }
-
-    &__description{
-        display: flex;
-        flex-direction: column;
-        align-content: flex-start;
-        align-items: center;
-        padding: 20px;
-        @media (max-width: 900px) {
-          align-content: flex-start;
-          align-items: center;
       }
     }
+  }
 
+}
+
+.unMenuComplet {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 100%;
+  
+  @media (max-width: 900px) {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.unMenuPartie {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width:30%;
+  
+  &__titre {
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: center;
+    padding: 20px;
     @media (max-width: 900px) {
+      display: flex;
       align-content: center;
-      justify-content: center;
-      padding: 20px;
-      width: 85%;
+      align-items: center;
+      justify-content: space-around;
     }
+  }
 
+  @media (max-width: 900px) {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 90%;
+  }
 }
 
 .menu {
@@ -155,28 +145,28 @@
   transform: scale(0);
   width: 100%;
 
-  &__entete{
+  &__entete {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
     flex: 1;
   }
 
-  &__titre{
+  &__titre {
     margin: 0;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
   }
 
-  &__detail{
+  &__detail {
     margin: 0;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
   }
 
-  &__prix{
+  &__prix {
     font-weight: bold;
     display: flex;
     justify-content: flex-end;
@@ -184,14 +174,14 @@
     padding-left: 0.5rem;
   }
 
-  &__check{
+  &__check {
     background-color: $couleur-tertiaire;
     width: 4rem;
     margin: -1rem -5rem -1rem 1rem;
     width: 4rem;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition-duration: 0.5s;
   }
 
@@ -204,9 +194,9 @@
     height: 1.6rem;
     width: 1.6rem;
     background-color: white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 100px;
     transform: rotate(180deg);
     transition-duration: 0.5s;
@@ -216,19 +206,19 @@
     transform: rotate(0);
   }
 
-  &__iconcheck{
-    color:$couleur-tertiaire;
+  &__iconcheck {
+    color: $couleur-tertiaire;
   }
 
 }
 
 .boutonConteneur {
-    display: flex;
-    justify-content: center;
-    padding: 3rem 0;
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
 }
   
 .boutonCommander {
-    @include button();
-    cursor: pointer;
+  @include button();
+  cursor: pointer;
 }

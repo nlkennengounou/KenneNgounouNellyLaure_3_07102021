@@ -1,45 +1,46 @@
 @charset "UTF-8";
+/* fichier comportant toutes imports pour regrouper le style de toutes les pages du site ohmyfood*/
+/* Le repertoire base/ contient les fichiers qui définissent les fondations de votre site, 
+par exemple la police de caractères et les normes que vous voulez appliquer sur tout votre site,
+telles que le box-sizing*/
+/* import de la police Roboto */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,900&display=swap");
+/* import de la police Shrikhand */
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+/* Appliquons la police à toute la page et */
 body, html {
   margin: 0;
   font-family: Roboto, sans-serif;
   box-sizing: border-box;
-  min-width: 310px;
+  min-width: 250px;
 }
 
+/* Définition la taille maximale et les marges automatiques */
 .conteneur {
-  min-width: 300px;
+  min-width: 250px;
   max-width: 1280px;
   margin: auto;
   position: relative;
 }
 
+/* Fichier regroupant toutes les animations du site
+    - Loader spinner: une animation qui ouvre la bouche et se referme pour engloutir des petites boules qui arrivent progressivement
+    - menuApparition: une animation pour faire apparaitre les élements en faisant varier l'échelle
+*/
+/* Animation du loader spinner: loader
+    - permettant de mettre l'animation sur un plan z au dessus du site 
+    - et flouter l'arrrère plan
+*/
 @keyframes loader {
   100% {
     opacity: 0;
     z-index: -10;
   }
 }
-/*
-@keyframes jump {
-  0% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateY(0.5rem);
-  }
-  75% {
-    transform: translateY(-0.5rem);
-  }
-  100% {
-    transform: translateY(0);
-  }
-
-}*/
+/* Animation du loader spinner :  loader-1
+    - faire des rotations progressives de 0 à -45deg 
+    pour apporter l'effet partie haute de la bouche ouverte pour le demi cercle 1
+*/
 @keyframes loader-1 {
   0% {
     transform: rotate(0deg);
@@ -51,6 +52,10 @@ body, html {
     transform: rotate(0deg);
   }
 }
+/* Animation du loader spinner: loader-2
+    - faire des rotations progressives de 180 à 225deg 
+    pour apporter l'effet partie basse bouche ouverte pour le demi cercle 2
+*/
 @keyframes loader-2 {
   0% {
     transform: rotate(180deg);
@@ -62,6 +67,10 @@ body, html {
     transform: rotate(180deg);
   }
 }
+/* Animation du loader spinner
+    - Déplacer chaque petit rond vers l'ouverture qui sert de bouche ouverte  
+    - Rendre le rond flouté au départ et totalement opaque à la fin 
+*/
 @keyframes loader-3 {
   0% {
     transform: translate(190px, 0);
@@ -75,6 +84,9 @@ body, html {
     opacity: 1;
   }
 }
+/* Animation du menu
+    - Faire apparaitre chaque element du menu en l'agrandissant de l'echelle 0 à 1
+*/
 @keyframes menuApparution {
   50% {
     transform: scale(0);
@@ -83,41 +95,78 @@ body, html {
     transform: scale(1);
   }
 }
+/*le repertoire components/ est utilisé pour ranger les blocs BEM qui sont plus indépendants, comme les boutons.
+*/
+/*Le repertoire layouts/ est le dossier où vous mettez vos blocs BEM qui contiennent ce qui est réutilisable,
+ par exemple un header pour les mises en page de grande taille ou un footer ;*/
+/*Le header est présent sur toutes les pages:
+  - Sur la page d’accueil, il contient le logo du site.
+  - Sur les pages de menu, il contient en plus un bouton de retour vers la page d’accueil*/
 .header {
   padding: 1rem 1rem;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
   position: relative;
   z-index: 1000;
+  min-width: 250px;
+  /* Style header page Accueil*/
+  /* Style header page Menu :logo */
+  /* Style header page Menu : icon */
+}
+.header__icone {
+  display: block;
+  margin: auto;
+  height: 50px;
+}
+@media (max-width: 830px) {
+  .header__icone {
+    height: 30px;
+  }
 }
 .header__logo {
   font-family: "Shrikhand", "cursive";
   margin: 0;
   text-align: center;
 }
-
 .header__icon {
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
+  top: 50%;
   left: 2rem;
   height: 2rem;
   width: 2rem;
-  top: 50%;
+  /*Déplacer la flèche du centre vers la coté gauche */
   transform: translateY(-50%);
   font-size: 1.2rem;
   color: black;
+}
+
+/*Le repertoire layouts/ est le dossier où vous mettez vos blocs BEM qui contiennent ce qui est réutilisable,
+ par exemple un header pour les mises en page de grande taille ou un footer ;*/
+/*Notre footer est contitué de : 
+  - quatre liens
+  - les deux premiers sont précédés d'un logo 
+
+Quelques précisions:
+  - Le footer est identique sur toutes les pages.
+  - Au clic sur “Contact”, un renvoi vers une adresse mail est effectué.
+
+Style:
+  - backgound: gris foncé 
+  - police couleur blanche 
+  - backgound des logo blanc*/
+.conteneur {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
 }
 
 .footer {
   background-color: #353535;
   padding-top: 20px;
   padding-bottom: 20px;
-}
-.footer .container {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
+  min-width: 250px;
 }
 .footer__logo {
   color: white;
@@ -134,6 +183,7 @@ body, html {
   flex-wrap: nowrap;
   color: white;
   text-decoration: none;
+  /*au survol: les liens sont surlignés */
 }
 .footer__link:hover {
   text-decoration: underline;
@@ -152,50 +202,10 @@ body, html {
   }
 }
 
-/*
-.loader {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0; 
-    background-color: rgba(255, 255, 255, 0.90);
-    animation: loader 0.01s;
-    animation-delay: 1.75s;
-    animation-fill-mode: both;
-    z-index: 10000;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    &__circle {
-      height: 1rem;
-      width: 1rem;
-      border-radius: 1rem;
-      animation: jump 1s;
-      animation-iteration-count: 1;
-
-      &Wrap {
-        display: flex;
-        width: 5rem;
-        justify-content: space-between;
-      }
-
-      &--1color {
-        background-color: $couleur-primaire;
-      }
-
-      &--2color {
-        background-color: $couleur-secondaire;
-        animation-delay: 0.25s;
-      }
-
-      &--3color {
-        background-color: $couleur-tertiaire;
-        animation-delay: 0.5s;
-      }
-    }
-  }*/
+/*Le repertoire layouts/ est le dossier où vous mettez vos blocs BEM qui contiennent ce qui est réutilisable,
+ par exemple un header pour les mises en page de grande taille ou un footer ;*/
+/* Style de la Page d'accueil*/
+/* animation de chargement de la page */
 .loadingEating {
   position: fixed;
   height: 100%;
@@ -252,6 +262,7 @@ body, html {
   transform: translate(-15px, 0);
 }
 .loader__child2Child {
+  /* Creer un demi cercle*/
   position: absolute;
   top: 40px;
   left: 40px;
@@ -275,6 +286,7 @@ body, html {
   }
 }
 
+/* Zone de localisation */
 .input {
   display: flex;
   justify-content: center;
@@ -283,6 +295,7 @@ body, html {
   background-color: #F2F2F2;
   font-size: 1.2rem;
   position: relative;
+  min-width: 250px;
 }
 .input__icon {
   display: flex;
@@ -313,7 +326,7 @@ body, html {
     display: flex;
     justify-content: space-around;
     max-width: 70%;
-    min-width: 50;
+    min-width: 50px;
   }
 }
 
@@ -323,6 +336,7 @@ body, html {
   justify-content: center;
   align-items: center;
   padding-top: 2rem;
+  width: 100%;
   background-color: #fafafa;
 }
 .objectif__titre1 {
@@ -357,6 +371,13 @@ body, html {
 }
 .objectif__bouton:active {
   background: #541f94;
+}
+@media (max-width: 285px) {
+  .objectif {
+    padding-left: 5px;
+    padding-right: 5px;
+    min-width: 270px;
+  }
 }
 
 .process {
@@ -437,6 +458,13 @@ body, html {
 }
 .restaurants__titre {
   font-weight: 800;
+}
+@media (max-width: 830px) {
+  .restaurants {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 .cartes {
@@ -525,6 +553,7 @@ body, html {
   justify-content: center;
   background: linear-gradient(0deg, #9356dc, #ff79da);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
 }
@@ -555,13 +584,17 @@ body, html {
   }
 }
 
+/* Style des Pages Menu des 4 restaurants */
+/* mettre une image comme couverture de la page */
 .imageBarnière {
   max-width: 100%;
+  min-width: 280px;
   max-height: 32rem;
   width: 100%;
   object-fit: cover;
 }
 
+/* */
 .unecarte {
   margin-top: -6rem;
   border-radius: 2rem 2rem 0 0;
@@ -572,6 +605,7 @@ body, html {
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
+  /* animer les coeurs en remplissant avec un gradient qui apparait au survol */
 }
 .unecarte__header {
   padding: 1rem 2rem 0 1rem;
@@ -581,7 +615,7 @@ body, html {
   justify-content: space-between;
 }
 .unecarte__title {
-  font-family: "Shrikhand", "cursive";
+  font-family: Shrikhand, "cursive";
 }
 .unecarte__btn {
   height: 2rem;
@@ -594,22 +628,6 @@ body, html {
   justify-content: center;
   cursor: pointer;
   position: relative;
-  /*
-  &:hover::before {
-    opacity: 1;
-  }
-
-  &::before {
-    opacity: 0;
-    transition: 0.5s;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(0deg, $couleur-primaire 0%, $couleur-secondaire 100%);
-  }*/
 }
 .unecarte__like {
   display: flex;
@@ -622,10 +640,13 @@ body, html {
   left: 0;
   height: 100%;
   width: 100%;
+  /* coeur avec background */
+  /* coeur sans background */
 }
 .unecarte__like--solid {
-  background: linear-gradient(0deg, #9356dc, #ff79da);
+  background: -webkit-linear-gradient(0deg, #9356dc, #ff79da);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
 }
@@ -644,7 +665,7 @@ body, html {
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: nowrap;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
 }
 @media (max-width: 900px) {
@@ -673,16 +694,18 @@ body, html {
 }
 @media (max-width: 900px) {
   .unMenuPartie__description {
-    align-content: flex-start;
+    display: flex;
+    align-content: center;
     align-items: center;
+    justify-content: space-around;
   }
 }
 @media (max-width: 900px) {
   .unMenuPartie {
+    display: flex;
     align-content: center;
     justify-content: center;
-    padding: 20px;
-    width: 85%;
+    width: 90%;
   }
 }
 

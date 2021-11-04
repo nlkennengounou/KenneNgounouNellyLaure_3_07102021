@@ -1,32 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+/*Le repertoire layouts/ est le dossier où vous mettez vos blocs BEM qui contiennent ce qui est réutilisable,
+ par exemple un header pour les mises en page de grande taille ou un footer ;*/
+
+/*Le header est présent sur toutes les pages:
+  - Sur la page d’accueil, il contient le logo du site.
+  - Sur les pages de menu, il contient en plus un bouton de retour vers la page d’accueil*/
 
 .header {
-    padding: $normal-padding $normal-padding;
-    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
-    position: relative;
-    z-index: 1000;
-  
-    &__logo {
-      font-family: "Shrikhand", "cursive";
-      margin: 0;
-      text-align: center;
+  padding: $normal-padding $normal-padding;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 1000;
+  min-width: 250px;
+
+
+  /* Style header page Accueil*/
+  &__icone {
+    display: block;
+    margin: auto;
+    height: 50px;
+    @media (max-width:830px) {
+      height: 30px;
     }
-}
+  }
 
-.header {
+  /* Style header page Menu :logo */
+  &__logo {
+    font-family: "Shrikhand", "cursive";
+    margin: 0;
+    text-align: center;
+  }
 
+  /* Style header page Menu : icon */
   &__icon {
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     position: absolute;
+    top: 50%;
     left: 2rem;
+
     height: 2rem;
     width: 2rem;
-    top: 50%;
-    
-    transform: translateY(-50%);
+
+    /*Déplacer la flèche du centre vers la coté gauche */
+    transform: translateY(-50%); 
     font-size: 1.2rem;
     color: black;
   }

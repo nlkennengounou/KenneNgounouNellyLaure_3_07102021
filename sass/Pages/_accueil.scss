@@ -1,50 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-/*
-.loader {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0; 
-    background-color: rgba(255, 255, 255, 0.90);
-    animation: loader 0.01s;
-    animation-delay: 1.75s;
-    animation-fill-mode: both;
-    z-index: 10000;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  
-    &__circle {
-      height: 1rem;
-      width: 1rem;
-      border-radius: 1rem;
-      animation: jump 1s;
-      animation-iteration-count: 1;
-  
-      &Wrap {
-        display: flex;
-        width: 5rem;
-        justify-content: space-between;
-      }
-  
-      &--1color {
-        background-color: $couleur-primaire;
-      }
-    
-      &--2color {
-        background-color: $couleur-secondaire;
-        animation-delay: 0.25s;
-      }
-    
-      &--3color {
-        background-color: $couleur-tertiaire;
-        animation-delay: 0.5s;
-      }
-    }
-  }*/
+/* Style de la Page d'accueil*/
 
-  .loadingEating {
+/* animation de chargement de la page */
+.loadingEating {
     position: fixed;
     height: 100%;
     width: 100%;
@@ -58,9 +15,10 @@
     animation: loader 0.01s;
     animation-delay: 1.75s;
     animation-fill-mode: both;
-  }
+}
 
-  .loader {
+
+.loader {
     width: 100%;
     height: 100%;
     top: 300px;
@@ -71,11 +29,11 @@
     backface-visibility: hidden;
     transform-origin: 0 0;
 
-    &__child1{
+    &__child1 {
         box-sizing: content-box;
         display: block; 
         
-        &Child{
+        &Child {
             position: absolute;
             top: 92px;
             left: -8px;
@@ -84,26 +42,29 @@
             border-radius: 50%;
             background: $couleur-secondaire;
             animation: loader-3 1s linear infinite; 
-        }  
-        &--1{
+        } 
+
+        &--1 {
             animation-delay: -0.67s;
             background: $couleur-tertiaire;
         }
 
-        &--2{
+        &--2 {
             animation-delay: -0.33s ;
             background: $couleur-secondaire;
         }
-        &--3{
+        &--3 {
             animation-delay: 0s ;
             background: $couleur-primaire;
         }
-       
+        
     }
 
-    &__child2{
-        transform: translate(-15px,0);
-        &Child{
+    &__child2 {
+        transform: translate(-15px, 0);
+
+        &Child {
+            /* Creer un demi cercle*/
             position: absolute;
             top: 40px;
             left: 40px;
@@ -115,26 +76,26 @@
             transform-origin: 60px 60px;
         }
 
-        &--1{
+        &--1 {
             
-
         }
 
-        &--2{
+        &--2 {
             animation: loader-2 1s linear infinite;
         }
-        &--3{
+
+        &--3 {
             transform: rotate(-90deg);
             animation: none;
         }
     }
-    
-    @media (max-width:830px) {
+
+    @media (max-width: 830px) {
         left: 30%;
     }
-  }
+}
 
-
+/* Zone de localisation */
 .input {
     display: flex;
     justify-content: center;
@@ -143,6 +104,8 @@
     background-color: $couleur-bg;
     font-size: 1.2rem;
     position: relative;
+    min-width: 250px;
+
 
     &__icon {
         display: flex;
@@ -166,20 +129,18 @@
             text-align: center;
         }
 
-        &:focus{
+        &:focus {
             border: 0.5px solid black;
         }
 
-        @media (max-width:600px) {
+        @media (max-width: 600px) {
             display: flex;
             justify-content: space-around;
             max-width: 70%;
-            min-width: 50;
+            min-width: 50px;
         }
-
     }
-
-  }
+}
 
 
 .objectif {
@@ -188,28 +149,33 @@
     justify-content: center;
     align-items: center;
     padding-top: 2rem;
+    
+    width: 100%;
     background-color: rgb(250, 250, 250);
 
-
-    &__titre1{
+    &__titre1 {
         font-weight: 900;
         text-align: center;
     }
 
-    &__titre2{
+    &__titre2 {
         font-weight: 300;
         margin-top: 1.5rem;
         text-align: center;
     }
 
-    &__bouton{
+    &__bouton {
         @include button();
         margin-bottom: 20px;
     }
-
+    @media (max-width: 285px) {
+        padding-left:5px;
+        padding-right:5px;
+        min-width: 270px;
+    }
 }
 
-.process{
+.process {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -217,11 +183,11 @@
     margin-top: 20px;
     width: 100%;
 
-    &__titre{
+    &__titre {
         font-weight: bold;
     }
 
-    &__etapes{
+    &__etapes {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -241,7 +207,7 @@
         }
     }
 
-    &__etape{
+    &__etape {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -266,6 +232,7 @@
             border-radius: 100px;
             transform: translateX(-10px)
         }
+
         @media (max-width:830px) {
             width: 100%;
             margin-bottom: 20px;
@@ -273,31 +240,38 @@
        
     }
 
-    &__icon{
+    &__icon {
         color: gray;
         padding-right: 20px;
         padding-left: 20px;
     }
 
-    &__texte{
+    &__texte {
         color: black;
         font-weight: 700;
     }
 
 }
 
-.restaurants{
+.restaurants {
     background-color: $couleur-bg;
     padding-bottom: 30px;
     padding-top: 30px;
     margin-top: 30px;
 
-    &__titre{
+    &__titre {
         font-weight: 800;
     }
+
+    @media (max-width:830px) {
+        width:100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
 }
 
-.cartes{
+.cartes {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -308,7 +282,7 @@
     padding-top: 50px;
    
     background-color: $couleur-bg; 
-    @media (max-width:830px) {
+    @media (max-width: 830px) {
         display: flex; 
         flex-direction: column;
         align-content: center;
@@ -318,7 +292,7 @@
 }
 
 
-.carte{
+.carte {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -334,7 +308,7 @@
 
     width:40%;
 
-    &__image{
+    &__image {
         object-fit: cover;        
         height: 200px;
         width: 100%;
@@ -342,7 +316,7 @@
         border: transparent solid 0px;
     }
 
-    &__badge{
+    &__badge {
         background-color: $couleur-tertiaire;
         color: darken($couleur-tertiaire, 90%);
         
@@ -354,7 +328,7 @@
         right: 10px;
     }
 
-    &__description{
+    &__description {
         display:flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -365,19 +339,19 @@
         padding:  0px 20px 20px 20px;
     }
 
-    &__titres{
+    &__titres {
        
     }
 
-    &__titre1{
+    &__titre1 {
 
     }
     
-    &__titre2{
+    &__titre2 {
 
     }
     
-    &__icon{
+    &__icon {
 
         display:flex;
         flex-direction: row;
@@ -397,7 +371,7 @@
         right: 0;
         cursor: pointer;
 
-        &--solid{
+        &--solid {
             transition-duration: .25s;
             position: absolute;
             top: 0;
@@ -410,9 +384,10 @@
 
             background: linear-gradient(0deg, rgb(147, 86, 220), rgb(255, 121, 218));
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             opacity: 0;
-            &:hover{
+            &:hover {
                opacity: 1;
             }
         }
@@ -432,7 +407,7 @@
             justify-content:center;
             opacity: 1;
 
-            &:hover{
+            &:hover {
                 opacity: 0; 
                 display: none
             }
@@ -442,8 +417,8 @@
 
     }
 
-     @media (max-width:830px) {
-        width:90%;
+    @media (max-width:830px) {
+        width: 90%;
     }
      
 }

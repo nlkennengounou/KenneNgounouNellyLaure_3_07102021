@@ -1,26 +1,23 @@
+/* Fichier regroupant toutes les animations du site
+    - Loader spinner: une animation qui ouvre la bouche et se referme pour engloutir des petites boules qui arrivent progressivement
+    - menuApparition: une animation pour faire apparaitre les élements en faisant varier l'échelle
+*/
+
+/* Animation du loader spinner: loader
+    - permettant de mettre l'animation sur un plan z au dessus du site 
+    - et flouter l'arrrère plan
+*/
 @keyframes loader {
   100% {
     opacity: 0;
     z-index: -10;
   }
 } 
-/*
-@keyframes jump {
-  0% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateY(0.5rem);
-  }
-  75% {
-    transform: translateY(-0.5rem);
-  }
-  100% {
-    transform: translateY(0);
-  }
 
-}*/
-
+/* Animation du loader spinner :  loader-1
+    - faire des rotations progressives de 0 à -45deg 
+    pour apporter l'effet partie haute de la bouche ouverte pour le demi cercle 1
+*/
 @keyframes loader-1 {
   0% { 
     transform: rotate(0deg); 
@@ -32,6 +29,11 @@
     transform: rotate(0deg); 
   }
 }
+
+/* Animation du loader spinner: loader-2
+    - faire des rotations progressives de 180 à 225deg 
+    pour apporter l'effet partie basse bouche ouverte pour le demi cercle 2
+*/
 @keyframes loader-2 {
   0% { 
     transform: rotate(180deg); 
@@ -44,25 +46,33 @@
   }
 }
 
+
+/* Animation du loader spinner
+    - Déplacer chaque petit rond vers l'ouverture qui sert de bouche ouverte  
+    - Rendre le rond flouté au départ et totalement opaque à la fin 
+*/
 @keyframes loader-3 {
   0% { 
     transform: translate(190px,0); 
     opacity: 0; 
   }
   20% { 
-   opacity: 1; 
+    opacity: 1; 
   }
   100% { 
     transform: translate(70px,0); 
-    opacity: 1 ;
+    opacity: 1;
   }
 }
 
+/* Animation du menu
+    - Faire apparaitre chaque element du menu en l'agrandissant de l'echelle 0 à 1
+*/
 @keyframes menuApparution {
-    50% {
-      transform: scale(0);
-    }
-    100% {
-      transform: scale(1);
-    }
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
