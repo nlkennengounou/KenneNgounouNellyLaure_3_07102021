@@ -95,6 +95,14 @@ body, html {
     transform: scale(1);
   }
 }
+@keyframes menupartie {
+  0% {
+    transform: translateX(190px);
+  }
+  100% {
+    transform: translateX(70px);
+  }
+}
 /*le repertoire components/ est utilisé pour ranger les blocs BEM qui sont plus indépendants, comme les boutons.
 */
 /*Le repertoire layouts/ est le dossier où vous mettez vos blocs BEM qui contiennent ce qui est réutilisable,
@@ -680,6 +688,7 @@ Style:
   flex-direction: column;
   justify-content: space-between;
   width: 30%;
+  animation: menupartie 1s linear;
 }
 .unMenuPartie__titre {
   text-transform: uppercase;
@@ -707,6 +716,14 @@ Style:
     justify-content: center;
     width: 90%;
   }
+}
+
+.delay-1 {
+  animation-delay: 0.05s;
+}
+
+.delay-2 {
+  animation-delay: 0.1s;
 }
 
 .menu {

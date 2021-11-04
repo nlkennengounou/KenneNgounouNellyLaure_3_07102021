@@ -76,3 +76,14 @@
     transform: scale(1);
   }
 }
+
+@keyframes menupartie {
+  0% { 
+    transform: translateX(190px); 
+  }
+  20% { 
+  }
+  100% { 
+    transform: translateX(70px); 
+  }
+}

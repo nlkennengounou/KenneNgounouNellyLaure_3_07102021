@@ -101,6 +101,7 @@
   flex-direction: column;
   justify-content: space-between;
   width:30%;
+  animation: menupartie 1s linear; 
   
   &__titre {
     text-transform: uppercase;
@@ -126,6 +127,12 @@
     align-content: center;
     justify-content: center;
     width: 90%;
+  }
+}
+
+@for $i from 1 to 3 {
+  .delay-#{$i} {
+    animation-delay:  #{$i/20}s;
   }
 }
 
