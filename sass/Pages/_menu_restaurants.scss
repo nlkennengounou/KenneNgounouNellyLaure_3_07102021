@@ -126,7 +126,9 @@
     display: flex;
     align-content: center;
     justify-content: center;
-    width: 100%; //sinon non centré
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100% - 20px); //sinon non centré
   }
 }
 
