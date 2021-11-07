@@ -102,10 +102,20 @@
   justify-content: space-between;
   width: 30%;
   animation: menupartie 1s linear; 
+  position: relative;
   
   &__titre {
     text-transform: uppercase;
-    text-align: center;
+    //text-align: center;
+    &::after {
+      content: "";
+      width: 3rem;
+      height: 0.25rem;
+      background-color: $couleur-tertiaire;
+      position: absolute;
+      left: 0;
+      top: 45px;
+    }
   }
 
   &__description {
@@ -129,12 +139,20 @@
     margin-left: 10px;
     margin-right: 10px;
     width: calc(100% - 20px); //sinon non centré
+    
+    /*CSS animations*/
+    -webkit-animation: none !important;
+    -moz-animation: none !important;
+    -o-animation: none !important;
+    -ms-animation: none !important;
+    animation: none !important;
+  
   }
 }
 
 @for $i from 1 to 3 {
   .delay-#{$i} {
-    animation-delay:  #{$i/20}s;
+    animation-delay:  #{ calc($i/3)}s;
   }
 }
 
@@ -218,7 +236,11 @@
   &__iconcheck {
     color: $couleur-tertiaire;
   }
-
+}
+@for $i from 0 to 9 {
+  .delai-#{$i} {
+    animation-delay:  #{ calc($i/10)}s;
+  }
 }
 
 .boutonConteneur {
