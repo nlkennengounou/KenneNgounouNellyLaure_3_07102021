@@ -445,6 +445,9 @@ Style:
 .process__etape:hover {
   background-color: #f2eafb;
 }
+.process__etape:hover i {
+  color: #9356DC;
+}
 @media (max-width: 830px) {
   .process__etape {
     width: 100%;
@@ -455,9 +458,6 @@ Style:
   color: gray;
   padding-right: 20px;
   padding-left: 20px;
-}
-.process:hover .process__icon {
-  color: #9356DC;
 }
 .process__texte {
   color: black;
